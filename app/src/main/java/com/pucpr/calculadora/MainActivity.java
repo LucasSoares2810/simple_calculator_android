@@ -21,22 +21,33 @@ public class MainActivity extends AppCompatActivity {
         resulteditText = findViewById(R.id.resulteditText);
     }
 
-    protected float getNumFromEditText(int id){
-        String aux;
-        if(id == 1){
-            aux = num1editText.getText().toString();
-        }else {
-            aux = num2editText.getText().toString();
-        }
-        return Float.parseFloat(aux);
+    public void plusButtonOnClick(View view){
+        float num1 = Integer.parseInt(num1editText.getText().toString());
+        float num2 = Integer.parseInt(num2editText.getText().toString());
+
+        resulteditText.setText(String.valueOf(num1+num2));
     }
 
-    public void plusButtonOnClick(View v){
-        float num1 = getNumFromEditText(1);
-        float num2 = getNumFromEditText(2);
+    public void minusButtonOnClick(View view){
+        float num1 = Integer.parseInt(num1editText.getText().toString());
+        float num2 = Integer.parseInt(num2editText.getText().toString());
 
-        float result = num1 + num2;
-
-        resulteditText.setText(String.valueOf(result));
+        resulteditText.setText(String.valueOf(num1-num2));
     }
+
+    public void multiplyButtonOnClick(View view){
+        float num1 = Integer.parseInt(num1editText.getText().toString());
+        float num2 = Integer.parseInt(num2editText.getText().toString());
+
+        resulteditText.setText(String.valueOf(num1*num2));
+    }
+
+    public void divideButtonOnClick(View view){
+        float num1 = Integer.parseInt(num1editText.getText().toString());
+        float num2 = Integer.parseInt(num2editText.getText().toString());
+
+        resulteditText.setText(String.valueOf(num1/num2));
+    }
+
+
 }
